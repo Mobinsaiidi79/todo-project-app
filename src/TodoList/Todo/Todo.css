@@ -1,0 +1,55 @@
+.Todo-Box {
+    min-height: 8rem;
+    min-width: 400px;
+    padding: 10px;
+    box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.Todo-title {
+    height: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #363636;
+}
+
+.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+
+.Todo-Information {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.Todo-Date {
+    margin-right: 20px;
+    font-size: 12px;
+    color: gray;
+    font-weight: 600;
+}
+
+.Todo-Icons {
+    width: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Todo-Icon {
+    font-size: 20px;
+    margin: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.Todo-Icon:hover {
+    transform: scale(1.1);
+}

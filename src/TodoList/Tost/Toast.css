@@ -1,0 +1,28 @@
+.toast-container{
+    right: 20px;
+    bottom: 10px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    right: -200px;
+    transition: 0.5s ease-in;
+}
+.toast-container.active{
+    visibility: visible;
+    opacity: 1;
+    right: 10px;
+
+}
+.toast-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.toast-body{
+    font-weight: bold;
+    text-align: right;
+}
+.btn-close{
+    transition: all 0.2s ease-in-out;
+}

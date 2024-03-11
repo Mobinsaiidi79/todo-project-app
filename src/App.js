@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from "react";
+import Background from "./TodoList/Todo/background/Background";
+import { useRoutes } from "react-router-dom";
+import routers from "./router";
+import UseContext from "./Context/UseContext";
+import users from "./datas";
+import Toast from "./TodoList/Tost/Toast";
 
-function App() {
+export default function App() {
+  const [todos, setTodos] = useState([]);
+  const [todoTitle, setTodoTitle] = useState("");
+  const [status, setStatus] = useState("all");
+  const [userName, setUserName] = useState("");
+  const [userPassword, setUserPassword] = useState("");
+  const [inLogin, setInLogin] = useState(false);
+  const [isShowToast, setIsShowToast] = useState(false);
+  let router = useRoutes(routers);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <UseContext.Provider
+        value={{users,
+          todos,
+          setTodos,
+          todoTitle,
+          setTodoTitle,
+          status,
+          setStatus,
+          userName,
+          setUserName,
+          userPassword,
+          setUserPassword,
+          inLogin,
+          setInLogin,
+          setIsShowToast,
+          isShowToast
+        }}
+      >
+        <div>
+          {router}
+          <Background></Background>
+          <Toast/>
+        </div>
+      </UseContext.Provider>
+    </>
   );
 }
-
-export default App;
